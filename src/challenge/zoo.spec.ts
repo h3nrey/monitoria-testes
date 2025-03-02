@@ -60,4 +60,18 @@ describe("Zoo", () => {
     zoo.addAnimal(rabbit);
     expect(zoo.getAnimalsBySpecies("Wolf")).toEqual([]);
   });
+
+  test("should return 0 as average age when there are no animals", () => {
+    expect(zoo.getAverageAge()).toBe(0);
+  });
+
+  test("should return the correct average age of animals", () => {
+    const a1 = new Animal("Zazu", "Bird", 2);
+    const a2 = new Animal("Mufasa", "Lion", 10);
+    const a3 = new Animal("Scar", "Lion", 8);
+    zoo.addAnimal(a1);
+    zoo.addAnimal(a2);
+    zoo.addAnimal(a3);
+    expect(zoo.getAverageAge()).toBeCloseTo((2 + 10 + 8) / 3, 5);
+  });
 });
