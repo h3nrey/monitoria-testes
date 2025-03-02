@@ -54,4 +54,10 @@ describe("Zoo", () => {
     zoo.addAnimal(dog);
     expect(zoo.getAnimalsBySpecies("Cat")).toEqual([cat1, cat2]);
   });
+
+  test("should return an empty array when no animals match the species", () => {
+    const rabbit = new Animal("Bugs", "Rabbit", 3);
+    zoo.addAnimal(rabbit);
+    expect(zoo.getAnimalsBySpecies("Wolf")).toEqual([]);
+  });
 });
