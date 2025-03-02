@@ -38,5 +38,11 @@ describe("Zoo", () => {
     expect(zoo.getAnimal("Ghost")).toBeUndefined();
   });
 
-
+  test("should return all animals", () => {
+    const a1 = new Animal("Leo", "Lion", 6);
+    const a2 = new Animal("Tony", "Tiger", 8);
+    zoo.addAnimal(a1);
+    zoo.addAnimal(a2);
+    expect(zoo.getAllAnimals()).toEqual([a1, a2]);
+  });
 });
