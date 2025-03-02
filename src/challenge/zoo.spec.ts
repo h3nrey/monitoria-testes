@@ -21,5 +21,12 @@ describe("Zoo", () => {
     expect(zoo.getAllAnimals()).not.toContain(lion);
   });
 
+  test("should not remove an animal if name does not exist", () => {
+    const tiger = new Animal("Shere Khan", "Tiger", 10);
+    zoo.addAnimal(tiger);
+    zoo.removeAnimal("Nonexistent");
+    expect(zoo.getAllAnimals()).toContain(tiger);
+  });
+
 
 });
