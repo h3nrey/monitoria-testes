@@ -34,5 +34,9 @@ describe("Zoo", () => {
     expect(zoo.getAnimal("Dumbo")).toBe(elephant);
   });
 
+  test("should return undefined when searching for a non-existent animal", () => {
+    expect(zoo.getAnimal("Ghost")).toBeUndefined();
+  });
+
 
 });
