@@ -45,4 +45,13 @@ describe("Zoo", () => {
     zoo.addAnimal(a2);
     expect(zoo.getAllAnimals()).toEqual([a1, a2]);
   });
+  test("should return animals by species", () => {
+    const cat1 = new Animal("Whiskers", "Cat", 2);
+    const cat2 = new Animal("Garfield", "Cat", 7);
+    const dog = new Animal("Snoopy", "Dog", 4);
+    zoo.addAnimal(cat1);
+    zoo.addAnimal(cat2);
+    zoo.addAnimal(dog);
+    expect(zoo.getAnimalsBySpecies("Cat")).toEqual([cat1, cat2]);
+  });
 });
