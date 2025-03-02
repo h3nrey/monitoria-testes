@@ -28,5 +28,11 @@ describe("Zoo", () => {
     expect(zoo.getAllAnimals()).toContain(tiger);
   });
 
+  test("should get an animal by name", () => {
+    const elephant = new Animal("Dumbo", "Elephant", 3);
+    zoo.addAnimal(elephant);
+    expect(zoo.getAnimal("Dumbo")).toBe(elephant);
+  });
+
 
 });
