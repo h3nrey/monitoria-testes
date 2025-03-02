@@ -1,18 +1,18 @@
 
 import { Zoo, Animal } from './zoo';
 
-describe('Zoo', () => {
+describe("Zoo", () => {
   let zoo: Zoo;
 
   beforeEach(() => {
     zoo = new Zoo();
   });
 
-  test('should add a new animal', () => {
-    const animal = new Animal('Leo', 'Lion', 5);
-    zoo.addAnimal(animal);
-    expect(zoo.getAllAnimals()).toContainEqual(animal);
+  test("should add an animal to the zoo", () => {
+    const lion = new Animal("Simba", "Lion", 5);
+    zoo.addAnimal(lion);
+    expect(zoo.getAllAnimals()).toContain(lion);
   });
 
-  // Add more tests here
+
 });
